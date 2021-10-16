@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-16T17:25:36.500Z",
+    "end": "2021-10-16T17:25:39.494Z",
+    "duration": 2994,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "98b4a4b1-2e42-4893-bf93-b99206902176",
+      "title": "",
+      "fullFile": "cypress/integration/listagem.spec.js",
+      "file": "cypress/integration/listagem.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "62e60deb-63aa-438f-9ef6-c116c40c3103",
+          "title": "Listagem",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Quando não houver cadastros, então a listagem deve estar vazia",
+              "fullTitle": "Listagem Quando não houver cadastros, então a listagem deve estar vazia",
+              "timedOut": null,
+              "duration": 836,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('listagem-vazia').then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit(\"https://form-agilizei.netlify.app/listagem.html\"); //deve conter o tamanho\ncy.get('table tbody tr').should('have.length', 0);",
+              "err": {},
+              "uuid": "34236143-3ff8-4e65-aa46-4500968bf424",
+              "parentUUID": "62e60deb-63aa-438f-9ef6-c116c40c3103",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Quando houver um ou mais cadastros, então a listagem deve exibir cada registro",
+              "fullTitle": "Listagem Quando houver um ou mais cadastros, então a listagem deve exibir cada registro",
+              "timedOut": null,
+              "duration": 455,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//no windows location ensina como passar os dados manualmente\n//window.localStorage.setItem('data', JSON.stringify([{\"firstName\":\"Agilizei\",\"lastName\":\"Bootcamp\",\"adress\":\"Sem Endereço\",\"emailAdress\":\"test@mail.com\",\"radioGender\":\"n\",\"checks\":[\"Netflix\",\"Livros\"],\"selectCountries\":\"Hong Kong\",\"selectYears\":\"2018\",\"selectMonths\":\"Abril\",\"pwd\":\"Aluno@2021\"}]))\n//abaixo passar o comando atravé de uma lista\ncy.fixture('listagem-com-itens').then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit(\"https://form-agilizei.netlify.app/listagem.html\");\ncy.get('table tbody tr').should('have.length', 2);",
+              "err": {},
+              "uuid": "d7567e8d-3a5f-494d-b973-7c68470cca89",
+              "parentUUID": "62e60deb-63aa-438f-9ef6-c116c40c3103",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "34236143-3ff8-4e65-aa46-4500968bf424",
+            "d7567e8d-3a5f-494d-b973-7c68470cca89"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1291,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
