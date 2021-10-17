@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2021-10-16T17:58:41.408Z",
-    "end": "2021-10-16T17:58:44.552Z",
-    "duration": 3144,
+    "start": "2021-10-17T14:21:47.889Z",
+    "end": "2021-10-17T14:21:50.890Z",
+    "duration": 3001,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b6556ea5-54dc-47fb-a2f5-8f89d0022279",
+      "uuid": "436582ea-5653-457c-9aa3-43940093db4c",
       "title": "",
       "fullFile": "cypress/integration/listagem.spec.js",
       "file": "cypress/integration/listagem.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "85e79cbd-81b1-4f4a-803c-de17071f11e2",
+          "uuid": "818ba0a2-8799-44b4-92af-19f7c878e99f",
           "title": "Listagem",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Quando não houver cadastros, então a listagem deve estar vazia",
               "fullTitle": "Listagem Quando não houver cadastros, então a listagem deve estar vazia",
               "timedOut": null,
-              "duration": 842,
+              "duration": 854,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.fixture('listagem-vazia').then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit(\"https://form-agilizei.netlify.app/listagem.html\"); //deve conter o tamanho\ncy.get('table tbody tr').should('have.length', 0);",
               "err": {},
-              "uuid": "cda2e851-e004-4543-8056-f8c3c20b1872",
-              "parentUUID": "85e79cbd-81b1-4f4a-803c-de17071f11e2",
+              "uuid": "03a41a57-27d8-4944-b330-37b7a06212b4",
+              "parentUUID": "818ba0a2-8799-44b4-92af-19f7c878e99f",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Quando houver um ou mais cadastros, então a listagem deve exibir cada registro",
               "fullTitle": "Listagem Quando houver um ou mais cadastros, então a listagem deve exibir cada registro",
               "timedOut": null,
-              "duration": 548,
+              "duration": 391,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "//no windows location ensina como passar os dados manualmente\n//window.localStorage.setItem('data', JSON.stringify([{\"firstName\":\"Agilizei\",\"lastName\":\"Bootcamp\",\"adress\":\"Sem Endereço\",\"emailAdress\":\"test@mail.com\",\"radioGender\":\"n\",\"checks\":[\"Netflix\",\"Livros\"],\"selectCountries\":\"Hong Kong\",\"selectYears\":\"2018\",\"selectMonths\":\"Abril\",\"pwd\":\"Aluno@2021\"}]))\n//abaixo passar o comando atravé de uma lista\ncy.fixture('listagem-com-itens').then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit(\"https://form-agilizei.netlify.app/listagem.html\");\ncy.get('table tbody tr').should('have.length', 2);",
               "err": {},
-              "uuid": "3f7e4081-ce25-4656-914e-ad1cd465d695",
-              "parentUUID": "85e79cbd-81b1-4f4a-803c-de17071f11e2",
+              "uuid": "1f53b323-b071-448e-a721-02b4ad303712",
+              "parentUUID": "818ba0a2-8799-44b4-92af-19f7c878e99f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "cda2e851-e004-4543-8056-f8c3c20b1872",
-            "3f7e4081-ce25-4656-914e-ad1cd465d695"
+            "03a41a57-27d8-4944-b330-37b7a06212b4",
+            "1f53b323-b071-448e-a721-02b4ad303712"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1390,
+          "duration": 1245,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
